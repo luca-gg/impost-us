@@ -2,7 +2,7 @@
 Among Us Cheat written in C#
 
 ## Running the cheat 
-Build it yourself or download the latest release zip file, unpack it and run.
+Build it yourself or download the latest release binary zip file (https://github.com/luca-gg/impost-us/releases/tag/1.0), unpack it and run.
 
 ## Features
 
