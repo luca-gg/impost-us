@@ -13,5 +13,6 @@ Build it yourself or download the latest release zip file, unpack it and run.
 - Reveal roles (red & green names)
 - Reset killtimer
 - Anti killtimer
+- Change the Speed
 
 More features coming soon!
