@@ -1,8 +1,6 @@
 # impost-us
 Among Us Cheat written in C#
 
-Thanks to shlifedev for the base: https://github.com/shlifedev/AmongUsMemory
-
 ## Running the cheat 
 Build it yourself or download the latest release zip file, unpack it and run.
 
