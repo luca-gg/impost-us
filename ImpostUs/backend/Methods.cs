@@ -8,9 +8,8 @@ namespace ImpostUs
 
     public static class Methods
     {
-        #region PlayerControl.GetData
         public static IntPtr PlayerControl_GetDataPTR = IntPtr.Zero;
-        #endregion
+        public static IntPtr PlayerTask_CompletePTR = IntPtr.Zero;
 
         [Init]
         public static void Init_PlayerControl_GetData()
@@ -28,12 +27,12 @@ namespace ImpostUs
         }
 
         [Call]
-        public static int Call_PlayerControl_GetData(IntPtr playerInfoPtr)
+        public static int Call_PlayerControl_GetData(IntPtr playerControlPtr)
         { 
             if (PlayerControl_GetDataPTR != IntPtr.Zero)
             {
                 var ptr = PlayerControl_GetDataPTR;
-                var playerInfoAddress = ImpostUsHook.ProcessMemory.CallFunction(ptr, playerInfoPtr); 
+                var playerInfoAddress = ImpostUsHook.ProcessMemory.CallFunction(ptr, playerControlPtr); 
                 return playerInfoAddress;
             }  
             return -1;

@@ -83,11 +83,21 @@ namespace ImpostUs
                 return ls; 
             }
         }
-        public void WriteMemory_LightRange(float value)
+        
+        
+        
+        public void FreezeMemory_LightRange(float value)
         {
             var targetPointer = Utils.GetMemberPointer(Instance.myLight, typeof(LightSource), "LightRadius");
-            ImpostUsHook.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString("0.0"));
+            ImpostUsHook.mem.FreezeValue(targetPointer.GetAddress(), "float", value.ToString("0.0"));
         }
+        
+        public void UnfreezeMemory_LightRange()
+        {
+            var targetPointer = Utils.GetMemberPointer(Instance.myLight, typeof(LightSource), "LightRadius");
+            ImpostUsHook.mem.UnfreezeValue(targetPointer.GetAddress());
+        }
+        
         public PlayerPhysics PlayerPhysics
         {
             get
@@ -98,6 +108,7 @@ namespace ImpostUs
                 return pp;
             }
         }
+        
         public void WriteMemory_Speed(float value)
         {
             var targetPointer = Utils.GetMemberPointer(Instance.MyPhysics, typeof(PlayerPhysics), "Speed");
@@ -111,6 +122,12 @@ namespace ImpostUs
         public void WriteMemory_Impostor(byte value)
         {
             var targetPointer = Utils.GetMemberPointer(PlayerInfoPTROffset, typeof(PlayerInfo), "IsImpostor");
+            ImpostUsHook.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
+        }
+        
+        public void WriteMemory_Dead(byte value)
+        {
+            var targetPointer = Utils.GetMemberPointer(PlayerInfoPTROffset, typeof(PlayerInfo), "IsDead");
             ImpostUsHook.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
         }
 

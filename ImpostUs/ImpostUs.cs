@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -79,8 +80,10 @@ namespace ImpostUs
                             });
                             wasVisible = true;
                         }
+                        
                         data.WriteMemory_Impostor((byte) (Controller.Impostor ? 1 : 0));
                         data.WriteMemory_Speed(Controller.Speed);
+                        
                         if (Controller.ResetKillTimer)
                         {
                             data.WriteMemory_KillTimer(0.00F);

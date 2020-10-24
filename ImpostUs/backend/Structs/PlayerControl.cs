@@ -1,7 +1,7 @@
 using System; 
- using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
- [StructLayout(LayoutKind.Explicit)]
+[StructLayout(LayoutKind.Explicit)]
 public struct PlayerControl{
 [FieldOffset(8)]	public uint m_CachedPtr;
 [FieldOffset(12)]	public uint SpawnId;
